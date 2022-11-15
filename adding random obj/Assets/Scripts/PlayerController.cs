@@ -1,0 +1,93 @@
+﻿using UnityEngine;
+
+// Unity Component that controls the player's movement
+public class PlayerController : MonoBehaviour {
+    // Different speeds of planar movement
+    private const int MoveSpeed = 5;
+    private const int RunSpeed = 10;
+
+    // Different speeds of rotation
+    private const int HRotSpeed = 100;
+    private const int VRotSpeed = 100;
+
+    // Different mins/maxs of player rotation
+    private const int MinVRot = -80;
+    private const int MaxVRot = 80;
+
+    // Head of the player, used for vertical rotation
+    private GameObject Head { get; set; }
+    // "Eyes" of the player
+    private Camera Camera { get; set; }
+    // Movement controller for the player that is wrapped around
+    private CharacterController Controller { get; set; }
+
+    // Start is called before the first frame update
+    void Start() {
+        // Collect necessary GameObjects and Components
+        Head = transform.Find("Head").gameObject;
+        Camera = Head.GetComponent<Camera>();
+        Controller = GetComponent<CharacterController>();
+    }
+
+    // Update is called once per frame
+    void Update() {
+        float delta = Time.deltaTime;
+
+        Rotation(delta);
+        Movement(delta);
+    }
+
+    // Controls where the player is facing
+    void Rotation(float delta) {
+        // Get user input for mouse movement
+        float dx = Input.GetAxis("Mouse X");
+        float dy = Input.GetAxis("Mouse Y");
+
+        // Calc rotation changes
+        float dhrot = delta * HRotSpeed * dx;
+        float dvrot = delta * VRotSpeed * dy;
+
+        // Apply horizontal rotation
+        transform.localEulerAngles += new Vector3(0, dhrot);
+
+        // Calc vertical rotation
+        float vrot = Head.transform.localEulerAngles.x;
+        if (vrot > 180) // Change domain from 0 to 360 to -180 to 180
+            vrot -= 360;
+        vrot -= dvrot;
+        // Make vertical rotation within bounds
+        vrot = Mathf.Max(Mathf.Min(vrot, MaxVRot), MinVRot);
+        // Apply vrot
+        Head.transform.localEulerAngles = new Vector3(vrot, 0);
+    }
+
+    // Controls how the player moves
+    void Movement(float delta) {
+        // Movement vector
+        Vector3 movement = new Vector3();
+
+        // Get movement from user input
+        if (Input.GetKey(KeyCode.W))
+            movement.z += 1;
+        if (Input.GetKey(KeyCode.S))
+            movement.z -= 1;
+        if (Input.GetKey(KeyCode.A))
+            movement.x -= 1;
+        if (Input.GetKey(KeyCode.D))
+            movement.x += 1;
+
+        movement.Normalize();
+
+        // Get speed from user input
+        int speed = Input.GetKey(KeyCode.LeftShift) ? RunSpeed : MoveSpeed;
+
+        // Rotate movement vector by the direction the player is looking
+        movement = Quaternion.Euler(0, transform.localEulerAngles.y, 0) * movement;
+
+        // Stretch movement by speed
+        movement *= speed;
+
+        // Move player
+        Controller.Move(delta * movement);
+    }
+}
