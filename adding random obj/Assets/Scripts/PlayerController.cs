@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour {
     private const int RunSpeed = 10;
 
     // Different speeds of rotation
-    private const int HRotSpeed = 500;
-    private const int VRotSpeed = 500;
+    private const int HRotSpeed = 250;
+    private const int VRotSpeed = 250;
 
     // Different mins/maxs of player rotation
     private const int MinVRot = -80;
@@ -141,14 +141,14 @@ public class PlayerController : MonoBehaviour {
             string tag = interactable.tag;
             // Checks the type
             switch (tag) {
-                case "keyMechanism": {
+                case "tutorialLock": {
                     if (Key.activeSelf) {
                         Destroy(interactable.transform.parent.gameObject);
                         Key.SetActive(false);
                     }
                     break;
                 }
-                case "key": {
+                case "tutorialKey": {
                     Key.SetActive(true);
                     Destroy(interactable);
                     break;
