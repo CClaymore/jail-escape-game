@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 // Unity Component that controls the player's movement
 public class PlayerController : MonoBehaviour {
@@ -7,8 +8,8 @@ public class PlayerController : MonoBehaviour {
     private const int RunSpeed = 10;
 
     // Different speeds of rotation
-    private const int HRotSpeed = 100;
-    private const int VRotSpeed = 100;
+    private const int HRotSpeed = 500;
+    private const int VRotSpeed = 500;
 
     // Different mins/maxs of player rotation
     private const int MinVRot = -80;
@@ -20,6 +21,10 @@ public class PlayerController : MonoBehaviour {
     private Camera Camera { get; set; }
     // Movement controller for the player that is wrapped around
     private CharacterController Controller { get; set; }
+    // The pointer to show what the player is looking at
+    private Image Pointer { get; set; }
+    // The key item for when the player is holding it
+    private GameObject Key { get; set; }
 
     // Start is called before the first frame update
     void Start() {
@@ -27,6 +32,8 @@ public class PlayerController : MonoBehaviour {
         Head = transform.Find("Head").gameObject;
         Camera = Head.GetComponent<Camera>();
         Controller = GetComponent<CharacterController>();
+        Pointer = transform.Find("Screen").Find("Pointer").GetComponent<Image>();
+        Key = Head.transform.Find("Key").gameObject;
     }
 
     // Update is called once per frame
@@ -35,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 
         Rotation(delta);
         Movement(delta);
+        TestForInteractions();
     }
 
     // Controls where the player is facing
@@ -89,5 +97,63 @@ public class PlayerController : MonoBehaviour {
 
         // Move player
         Controller.Move(delta * movement);
+    }
+
+    void TestForInteractions() {
+        // Sends out a ray to see what the player is looking at
+        if (Physics.Raycast(Head.transform.position, Head.transform.forward, out RaycastHit hit, Mathf.Infinity, ~LayerMask.GetMask("Player"))) {
+            // Gets the type of object the ray just hit
+            string hitLayer = LayerMask.LayerToName(hit.transform.gameObject.layer);
+            // Checks the type
+            switch (hitLayer) {
+                // These are able to be interacted with by the player when clicked
+                case "Interactable": {
+                    Pointer.color = Color.red;
+                    Interact(hit.transform.gameObject);
+                    break;
+                }
+                // This is the sheriff
+                case "Sheriff": {
+                    Pointer.color = Color.yellow;
+                    break;
+                }
+                // This is everything else
+                default: {
+                    Pointer.color = Color.white;
+                    break;
+                }
+            }
+        } else { // Gets here if the player is looking at the skybox
+            Pointer.color = Color.blue;
+        }
+    }
+
+    // Does the interaction logic
+    void Interact(GameObject hitObject) {
+        // Checks if clicked
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            // Gets the interactable object from the raycasted object
+            GameObject interactable = hitObject;
+            while (interactable.tag.Equals("Untagged"))
+                interactable = interactable.transform.parent.gameObject;
+
+            // Gets the type of interactable object
+            string tag = interactable.tag;
+            // Checks the type
+            switch (tag) {
+                case "keyMechanism": {
+                    if (Key.activeSelf) {
+                        Destroy(interactable.transform.parent.gameObject);
+                        Key.SetActive(false);
+                    }
+                    break;
+                }
+                case "key": {
+                    Key.SetActive(true);
+                    Destroy(interactable);
+                    break;
+                }
+            }
+        }
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -214,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 4522246476182990120, guid: d5e72ab8be2c6ca44b9258e94606e794,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.85
+      value: 2.125
       objectReference: {fileID: 0}
     - target: {fileID: 4522246476182990120, guid: d5e72ab8be2c6ca44b9258e94606e794,
         type: 3}
@@ -261,6 +261,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 961210179, guid: d5e72ab8be2c6ca44b9258e94606e794, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e72ab8be2c6ca44b9258e94606e794, type: 3}
 --- !u!1001 &1858068307
@@ -283,7 +287,7 @@ PrefabInstance:
     - target: {fileID: 8145107821043949624, guid: da3d90f7edf083f4fb592cf07896b8a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8145107821043949624, guid: da3d90f7edf083f4fb592cf07896b8a4,
         type: 3}
@@ -352,12 +356,12 @@ PrefabInstance:
     - target: {fileID: 1702287399807404010, guid: 24dc22fe4555c654b8a2864cfdb4274e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.125
       objectReference: {fileID: 0}
     - target: {fileID: 1702287399807404010, guid: 24dc22fe4555c654b8a2864cfdb4274e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.200038
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1702287399807404010, guid: 24dc22fe4555c654b8a2864cfdb4274e,
         type: 3}
