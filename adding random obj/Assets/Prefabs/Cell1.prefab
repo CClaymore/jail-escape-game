@@ -207,7 +207,8 @@ MonoBehaviour:
 
     <color="blue">Blue<color="white> = The outside
 
-    Don''t let the sheriff catch you moving or else you will have to start over!
+    Don''t let the sheriff catch you moving or else you will go back to the first
+    cell!
 
 
     Pick up the key below to start!'
@@ -279,10 +280,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5825580719477820655}
-    characterCount: 361
+    characterCount: 368
     spriteCount: 0
-    spaceCount: 68
-    wordCount: 65
+    spaceCount: 70
+    wordCount: 67
     linkCount: 0
     lineCount: 13
     pageCount: 1

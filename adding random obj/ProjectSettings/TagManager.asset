@@ -7,6 +7,9 @@ TagManager:
   - tutorialKey
   - key
   - tutorialLock
+  - drawer
+  - drawerLock
+  - pillow
   layers:
   - Default
   - TransparentFX

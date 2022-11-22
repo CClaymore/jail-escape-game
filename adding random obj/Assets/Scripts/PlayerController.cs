@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour {
     private Image Pointer { get; set; }
     // The key item for when the player is holding it
     private GameObject Key { get; set; }
+    // The blue key
+    private GameObject BlueKey { get; set; }
 
     // Whether the player is currently moving
     public bool Moving { get; private set; } = false;
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour {
         Controller = GetComponent<CharacterController>();
         Pointer = transform.Find("Screen").Find("Pointer").GetComponent<Image>();
         Key = Head.transform.Find("Key").gameObject;
+        BlueKey = Head.transform.Find("KeyBlue").gameObject;
     }
 
     // Update is called once per frame
@@ -152,15 +155,39 @@ public class PlayerController : MonoBehaviour {
             // Checks the type
             switch (tag) {
                 case "tutorialLock": {
+                    // Checks if the key is held
                     if (Key.activeSelf) {
                         Destroy(interactable.transform.parent.gameObject);
                         Key.SetActive(false);
                     }
                     break;
                 }
+                case "key":
                 case "tutorialKey": {
+                    // Hold key
                     Key.SetActive(true);
                     Destroy(interactable);
+                    break;
+                }
+                case "drawer": {
+                    ChestOfDrawers cod = interactable.GetComponentInParent<ChestOfDrawers>();
+                    // Checks if the drawer is locked
+                    if (!interactable.name.EndsWith("Locked"))
+                        cod.ToggleDrawer(interactable);
+                    break;
+                }
+                case "drawerLock": {
+                    ChestOfDrawers cod = interactable.GetComponentInParent<ChestOfDrawers>();
+                    // Checks if blue key is held
+                    if (BlueKey.activeSelf) {
+                        cod.UnlockDrawer(interactable);
+                        BlueKey.SetActive(false);
+                    }
+                    break;
+                }
+                case "pillow": {
+                    Bed bed = interactable.GetComponentInParent<Bed>();
+                    bed.MovePillow();
                     break;
                 }
             }
@@ -168,7 +195,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Resets the player position and rotation to original
-    // TODO: reset rooms and items
     public void Reset() {
         transform.localPosition = DefaultPos;
         transform.eulerAngles = DefaultRot;

@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 public class SheriffController : MonoBehaviour {
     // The bounds of sheriff movement
     private const float MinXPos = -22;
     private const float MaxXPos = 20.5f;
     // The speed that the sheriff moves
-    private const float MovementSpeed = 0.3875f;
+    private const float MovementSpeed = 0.3875f * (20 / 50f);
     // The time that the sheriff takes to pause
     private const int PauseTime = 50;
     // The speeds that the sheriff should rotate
@@ -29,11 +30,10 @@ public class SheriffController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         Head = transform.Find("Head").gameObject;
-
-        Invoke("Movement", 0.05f);
     }
 
-    void Movement() {
+    // Update is called once per frame
+    void FixedUpdate() {
         Vector3 currPos = transform.position; // get current position
 
         Vector3 myRot = transform.eulerAngles; //get current rotation
@@ -155,15 +155,14 @@ public class SheriffController : MonoBehaviour {
 
         transform.eulerAngles = myRot;
         transform.position = currPos; //set position to changed vector
-
-        Invoke("Movement", 0.05f);
     }
 
     void TestForPlayerMovement() {
-        if (SendRays(out PlayerController player, 0, -10, 10, -20, 20)) {
-            if (player.Moving) {
+        // Sends out rays from -30 to 30 degs to find the player
+        if (SendRays(out PlayerController player, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30)) {
+            // If the player if moving then reset them
+            if (player.Moving)
                 player.Reset();
-            }
         }
     }
 
