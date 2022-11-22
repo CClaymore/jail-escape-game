@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1387610339778060117}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1702287398862067119}
   - component: {fileID: 1702287398862067116}
   - component: {fileID: 1702287398862067117}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SheriffCylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1702287399807404010}
   - component: {fileID: 1702287399807404011}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sheriff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,6 +234,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666225514980564014, guid: 3ecc2e426be12bd49b15d0932a680a39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666225513166134211, guid: 3ecc2e426be12bd49b15d0932a680a39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666225513344458061, guid: 3ecc2e426be12bd49b15d0932a680a39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666225513432332079, guid: 3ecc2e426be12bd49b15d0932a680a39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666225514319202550, guid: 3ecc2e426be12bd49b15d0932a680a39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ecc2e426be12bd49b15d0932a680a39, type: 3}

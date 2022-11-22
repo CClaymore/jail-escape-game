@@ -55,7 +55,7 @@ public class SheriffController : MonoBehaviour {
                     float xPos = currPos.x;
                     //print("xpos: " + xPos);
 
-                    float maxDisplacement = 20.5f - xPos;
+                    float maxDisplacement = MaxXPos - xPos;
                     //print("maxDisplacement: " + maxDisplacement);
 
                     float maxIntervals = maxDisplacement / MovementSpeed;
@@ -80,7 +80,7 @@ public class SheriffController : MonoBehaviour {
                     float xPos = currPos.x;
                     //print("xpos: " + xPos);
 
-                    float maxDisplacement = (-22.0f - xPos) * -1;
+                    float maxDisplacement = (MinXPos - xPos) * -1;
                     //print("maxDisplacement: " + maxDisplacement);
 
                     float maxIntervals = maxDisplacement / MovementSpeed;
@@ -160,26 +160,30 @@ public class SheriffController : MonoBehaviour {
     }
 
     void TestForPlayerMovement() {
-        /*if () {
-
-        }*/
+        if (SendRays(out PlayerController player, 0, -10, 10, -20, 20)) {
+            if (player.Moving) {
+                player.Reset();
+            }
+        }
     }
 
     // Sends out a multiple rays at different directions from the sheriff's head and returns true if it hit the player
-    bool SendRays(out RaycastHit hit, params float[] rotations) {
+    bool SendRays(out PlayerController player, params float[] rotations) {
         foreach (float rotation in rotations) {
             Vector3 direction = Head.transform.forward;
             direction = Quaternion.Euler(0, rotation, 0) * direction; // The direction vector to send the ray
             LayerMask layers = ~LayerMask.GetMask("Sheriff", "Bars"); // every layer except the sheriff and the bars
             // Send out ray
-            if (Physics.Raycast(Head.transform.position, direction, out hit, Mathf.Infinity, layers)) {
-                // If the ray hit the player
-                if (hit.transform.gameObject.layer.Equals("Player")) {
-                    hit = 
+            if (Physics.Raycast(Head.transform.position, direction, out RaycastHit hit, Mathf.Infinity, layers)) {
+                // If the ray hit the player, out the hit player
+                if (LayerMask.LayerToName(hit.transform.gameObject.layer).Equals("Player")) {
+                    player = hit.transform.GetComponentInParent<PlayerController>();
+                    if (player != null)
+                        return true;
                 }
             }
         }
-        hit = default;
+        player = default;
         return false; // Return false if not found
     }
 }

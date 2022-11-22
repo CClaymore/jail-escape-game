@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour {
         Controller.Move(delta * movement);
 
         // Set if player is moving
-        Moving = movement == Vector3.zero;
+        Moving = movement != Vector3.zero;
     }
 
     void TestForInteractions() {
@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour {
 
     // Resets the player position and rotation to original
     // TODO: reset rooms and items
-    void Reset() {
+    public void Reset() {
         transform.localPosition = DefaultPos;
         transform.eulerAngles = DefaultRot;
         Head.transform.eulerAngles = Vector3.zero;
