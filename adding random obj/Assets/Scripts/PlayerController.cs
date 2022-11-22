@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour {
     private const int MinVRot = -80;
     private const int MaxVRot = 80;
 
+    // Default position and rotation of player on game start
+    private readonly Vector3 DefaultPos = new Vector3(-22, 2.125f, -6);
+    private readonly Vector3 DefaultRot = new Vector3(0, 90, 0);
+
     // Head of the player, used for vertical rotation
     private GameObject Head { get; set; }
     // "Eyes" of the player
@@ -25,6 +29,9 @@ public class PlayerController : MonoBehaviour {
     private Image Pointer { get; set; }
     // The key item for when the player is holding it
     private GameObject Key { get; set; }
+
+    // Whether the player is currently moving
+    public bool Moving { get; private set; } = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -97,6 +104,9 @@ public class PlayerController : MonoBehaviour {
 
         // Move player
         Controller.Move(delta * movement);
+
+        // Set if player is moving
+        Moving = movement != Vector3.zero;
     }
 
     void TestForInteractions() {
@@ -155,5 +165,13 @@ public class PlayerController : MonoBehaviour {
                 }
             }
         }
+    }
+
+    // Resets the player position and rotation to original
+    // TODO: reset rooms and items
+    public void Reset() {
+        transform.localPosition = DefaultPos;
+        transform.eulerAngles = DefaultRot;
+        Head.transform.eulerAngles = Vector3.zero;
     }
 }
