@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c45110d24d310a3439bb909ba3aa21eb, type: 2}
+  - {fileID: 2100000, guid: 3cee72b297129ac4592cbea14c1cc928, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,7 +149,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c45110d24d310a3439bb909ba3aa21eb, type: 2}
+  - {fileID: 2100000, guid: 3cee72b297129ac4592cbea14c1cc928, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -281,7 +281,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c45110d24d310a3439bb909ba3aa21eb, type: 2}
+  - {fileID: 2100000, guid: 3cee72b297129ac4592cbea14c1cc928, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -321,6 +321,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8174940174264627229}
     m_Modifications:
+    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
+        type: 3}
+      propertyPath: m_Name
+      value: CellBars (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 5853490513641356869, guid: 24dc932f995c61a42a270c32bee12ff3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -376,11 +381,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
-        type: 3}
-      propertyPath: m_Name
-      value: CellBars (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dc932f995c61a42a270c32bee12ff3, type: 3}
 --- !u!4 &6582490257752895913 stripped
@@ -396,6 +396,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8174940174264627229}
     m_Modifications:
+    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
+        type: 3}
+      propertyPath: m_Name
+      value: CellBars (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5853490513641356869, guid: 24dc932f995c61a42a270c32bee12ff3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -451,11 +456,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
-        type: 3}
-      propertyPath: m_Name
-      value: CellBars (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dc932f995c61a42a270c32bee12ff3, type: 3}
 --- !u!4 &5135296263630416953 stripped
@@ -471,6 +471,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8174940174264627229}
     m_Modifications:
+    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
+        type: 3}
+      propertyPath: m_Name
+      value: CellBars
+      objectReference: {fileID: 0}
     - target: {fileID: 5853490513641356869, guid: 24dc932f995c61a42a270c32bee12ff3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -526,11 +531,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
-        type: 3}
-      propertyPath: m_Name
-      value: CellBars
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dc932f995c61a42a270c32bee12ff3, type: 3}
 --- !u!4 &8174940174180321907 stripped
@@ -546,6 +546,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8174940174264627229}
     m_Modifications:
+    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
+        type: 3}
+      propertyPath: m_Name
+      value: CellBars (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 5853490513641356869, guid: 24dc932f995c61a42a270c32bee12ff3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -601,11 +606,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
-        type: 3}
-      propertyPath: m_Name
-      value: CellBars (4)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dc932f995c61a42a270c32bee12ff3, type: 3}
 --- !u!4 &2269417084145796045 stripped
@@ -621,6 +621,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8174940174264627229}
     m_Modifications:
+    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
+        type: 3}
+      propertyPath: m_Name
+      value: CellBars (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 5853490513641356869, guid: 24dc932f995c61a42a270c32bee12ff3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -676,11 +681,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
-        type: 3}
-      propertyPath: m_Name
-      value: CellBars (6)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dc932f995c61a42a270c32bee12ff3, type: 3}
 --- !u!4 &1032685861109662209 stripped
@@ -696,6 +696,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8174940174264627229}
     m_Modifications:
+    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
+        type: 3}
+      propertyPath: m_Name
+      value: CellBars (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 5853490513641356869, guid: 24dc932f995c61a42a270c32bee12ff3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -751,11 +756,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
-        type: 3}
-      propertyPath: m_Name
-      value: CellBars (7)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dc932f995c61a42a270c32bee12ff3, type: 3}
 --- !u!4 &2401654650691314302 stripped
@@ -771,6 +771,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8174940174264627229}
     m_Modifications:
+    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
+        type: 3}
+      propertyPath: m_Name
+      value: CellBars (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 5853490513641356869, guid: 24dc932f995c61a42a270c32bee12ff3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -826,11 +831,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
-        type: 3}
-      propertyPath: m_Name
-      value: CellBars (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dc932f995c61a42a270c32bee12ff3, type: 3}
 --- !u!4 &2482996141436814549 stripped
@@ -846,6 +846,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8174940174264627229}
     m_Modifications:
+    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
+        type: 3}
+      propertyPath: m_Name
+      value: CellBars (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 5853490513641356869, guid: 24dc932f995c61a42a270c32bee12ff3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -900,11 +905,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5853490513641356868, guid: 24dc932f995c61a42a270c32bee12ff3,
-        type: 3}
-      propertyPath: m_Name
-      value: CellBars (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dc932f995c61a42a270c32bee12ff3, type: 3}
