@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour {
     private const int MaxVRot = 80;
 
     // Default position and rotation of player on game start
-    private readonly Vector3 DefaultPos = new Vector3(-22, 2.125f, -6);
+
+    //private readonly Vector3 DefaultPos = new Vector3(-22, 2.125f, -6);
+    private readonly Vector3 DefaultPos = new Vector3(22, 2.125f, -6);
     private readonly Vector3 DefaultRot = new Vector3(0, 90, 0);
 
     // Head of the player, used for vertical rotation
