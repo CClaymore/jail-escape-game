@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8321128412657956215}
   - component: {fileID: 482644695596135050}
   - component: {fileID: 492875601900265119}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: midwall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,9 +100,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5520192547961456274}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tile
-  m_TagString: Untagged
+  m_TagString: tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 7738609683062896772}
   - component: {fileID: 7115804603858329886}
   - component: {fileID: 5454520529965895919}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 7690787608094247649}
   - component: {fileID: 7371202645371358607}
   - component: {fileID: 6889351883289576473}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: outerwall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 4077213766227827315}
   - component: {fileID: 3680214825306323662}
   - component: {fileID: 2189937766087634294}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: innerwall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

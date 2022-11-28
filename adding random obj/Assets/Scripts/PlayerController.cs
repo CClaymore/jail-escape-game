@@ -31,8 +31,10 @@ public class PlayerController : MonoBehaviour {
     private GameObject Key { get; set; }
     // The blue key
     private GameObject BlueKey { get; set; }
-    // The mace item for thwn the player is holding it
+    // The mace item for when the player is holding it
     private GameObject Mace { get; set; }
+    // The knife item for when the player is holding it
+    private GameObject Knife { get; set; }
 
     // Whether the player is currently moving
     public bool Moving { get; private set; } = false;
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour {
         Key = Head.transform.Find("Key").gameObject;
         BlueKey = Head.transform.Find("KeyBlue").gameObject;
         Mace = Head.transform.Find("Mace").gameObject;
+        Knife = Head.transform.Find("Knife").gameObject;
 
         // Hide mouse and lock it
         Cursor.visible = false;
@@ -179,6 +182,12 @@ public class PlayerController : MonoBehaviour {
                     Destroy(interactable);
                     break;
                 }
+                case "blueKey": {
+                    // Hold blue key
+                    BlueKey.SetActive(true);
+                    Destroy(interactable);
+                    break;
+                }
                 case "drawer": {
                     // Get drawer controller
                     ChestOfDrawers cod = interactable.GetComponentInParent<ChestOfDrawers>();
@@ -222,6 +231,19 @@ public class PlayerController : MonoBehaviour {
                         if (keyDropped)
                             Mace.SetActive(false);
                     }
+                    break;
+                }
+                case "knife": {
+                    // Hold knife
+                    Knife.SetActive(true);
+                    Destroy(interactable);
+                    break;
+                }
+                case "tile": {
+                    // Test if knife is being held
+                    if (Knife.activeSelf)
+                        // Destroy tile
+                        Destroy(interactable);
                     break;
                 }
             }
