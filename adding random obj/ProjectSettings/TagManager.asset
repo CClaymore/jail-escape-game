@@ -10,6 +10,7 @@ TagManager:
   - drawer
   - drawerLock
   - pillow
+  - mace
   layers:
   - Default
   - TransparentFX
