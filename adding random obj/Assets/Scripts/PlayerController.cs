@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+//Team Members: Corey Clayborn, Xander Covalan, Ben Johnson
+
 // Unity Component that controls the player's movement
 public class PlayerController : MonoBehaviour {
     // Different speeds of planar movement

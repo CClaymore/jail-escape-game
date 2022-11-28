@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//Team Members: Corey Clayborn, Xander Covalan, Ben Johnson
 public class ChestOfDrawers : MonoBehaviour {
 
     // Toggles the position of the drawer between in and out

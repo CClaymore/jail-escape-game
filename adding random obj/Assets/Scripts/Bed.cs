@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//Team Members: Corey Clayborn, Xander Covalan, Ben Johnson
 public class Bed : MonoBehaviour {
     // The interactable pillow
     private GameObject Pillow { get; set; }

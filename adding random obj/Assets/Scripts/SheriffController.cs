@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using UnityEngine;
 
+//Team Members: Corey Clayborn, Xander Covalan, Ben Johnson
+
 public class SheriffController : MonoBehaviour {
     // The bounds of sheriff movement
     private const float MinXPos = -22;
