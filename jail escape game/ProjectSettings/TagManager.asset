@@ -13,6 +13,8 @@ TagManager:
   - mace
   - barrel
   - blueKey
+  - knife
+  - tile
   layers:
   - Default
   - TransparentFX
