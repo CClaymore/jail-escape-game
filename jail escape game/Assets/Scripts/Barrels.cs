@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+//Team Members: Corey Clayborn, Xander Covalan, Ben Johnson
+
 public class Barrels : MonoBehaviour {
     // The key that is under one of the barrels
     private GameObject Key { get; set; }
