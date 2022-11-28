@@ -143,9 +143,11 @@ public class SheriffController : MonoBehaviour {
                     else if (pauseTimeLeft < 10)
                         myRot.y += RotSpeed90; // Turn left
                 }
-            }
 
-            TestForPlayerMovement();
+                // Test if sheriff is not rotating
+                if (pauseTimeLeft >= 10 && pauseTimeLeft < 40)
+                    TestForPlayerMovement();
+            }
 
             if(pauseTimeLeft == 0) { // When pause is over, cancel rotation
                 isRotating180 = false;
@@ -160,7 +162,7 @@ public class SheriffController : MonoBehaviour {
 
     void TestForPlayerMovement() {
         // Sends out rays from -30 to 30 degs to find the player
-        if (SendRays(out PlayerController player, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30)) {
+        if (SendRays(out PlayerController player, -20, -15, -10, -5, 0, 5, 10, 15, 20)) {
             // If the player if moving then reset them
             if (player.Moving)
                 player.Reset();

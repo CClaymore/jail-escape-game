@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7096264263700046329}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Knife
-  m_TagString: Untagged
+  m_TagString: knife
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4510633820938228051}
   - component: {fileID: 3281917634718193992}
   - component: {fileID: 3925487051865327225}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,8 +122,8 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
+  m_Height: 1
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7531322628916976597
 GameObject:
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 1905016627060928940}
   - component: {fileID: 2407493085782669819}
   - component: {fileID: 2600433610111233320}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 4218992684406381927}
   - component: {fileID: 2913398158946689320}
   - component: {fileID: 5575503963863416638}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,6 +11,8 @@ TagManager:
   - drawerLock
   - pillow
   - mace
+  - barrel
+  - blueKey
   layers:
   - Default
   - TransparentFX
