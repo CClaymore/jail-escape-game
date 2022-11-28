@@ -27,7 +27,7 @@ public class SheriffController : MonoBehaviour {
     // The head of the sheriff
     private GameObject Head { get; set; }
 
-    // Start is called before the first frame update
+    // Finds the necessary children and components for the SheriffController to work
     void Start() {
         Head = transform.Find("Head").gameObject;
     }
@@ -160,7 +160,7 @@ public class SheriffController : MonoBehaviour {
     void TestForPlayerMovement() {
         // Sends out rays from -30 to 30 degs to find the player
         if (SendRays(out PlayerController player, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30)) {
-            // If the player if moving then reset them
+            // If the player is moving then reset them
             if (player.Moving)
                 player.Reset();
         }
@@ -170,7 +170,7 @@ public class SheriffController : MonoBehaviour {
     bool SendRays(out PlayerController player, params float[] rotations) {
         foreach (float rotation in rotations) {
             Vector3 direction = Head.transform.forward;
-            direction = Quaternion.Euler(0, rotation, 0) * direction; // The direction vector to send the ray
+            direction = Quaternion.Euler(0, rotation + 90, 0) * direction; // The direction vector to send the ray
             LayerMask layers = ~LayerMask.GetMask("Sheriff", "Bars"); // every layer except the sheriff and the bars
             // Send out ray
             if (Physics.Raycast(Head.transform.position, direction, out RaycastHit hit, Mathf.Infinity, layers)) {
