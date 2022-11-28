@@ -6,7 +6,7 @@ public class Bed : MonoBehaviour {
     // The pillow but moved and not interactable
     private GameObject PillowMoved { get; set; }
 
-    // Finds the necessary children and components for the Bed to work
+    // Start is called before the first frame update
     void Start() {
         Pillow = transform.Find("Pillow").gameObject;
         PillowMoved = transform.Find("PillowMoved").gameObject;
