@@ -216,7 +216,11 @@ public class PlayerController : MonoBehaviour {
                     Barrels barrels = interactable.GetComponentInParent<Barrels>();
                     // Checks if player is holding mace
                     if (Mace.activeSelf) {
-
+                        // Destroy the barrel, and see if key dropped
+                        bool keyDropped = barrels.DestroyBarrelAndTryDropKey(interactable);
+                        // Test if key dropped
+                        if (keyDropped)
+                            Mace.SetActive(false);
                     }
                     break;
                 }
