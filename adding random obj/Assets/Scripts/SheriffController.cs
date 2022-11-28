@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 //Team Members: Corey Clayborn, Xander Covalan, Ben Johnson
 

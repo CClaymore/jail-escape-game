@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8434934685846734617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.6755, y: 6, z: 0}
-  m_LocalScale: {x: 4.652, y: 12, z: 0.25}
+  m_LocalScale: {x: 4.652, y: 12, z: 0.2501}
   m_Children: []
   m_Father: {fileID: 8434934686420533296}
   m_RootOrder: 1
@@ -133,9 +133,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8434934686078158802}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: KeyMechanism
-  m_TagString: Untagged
+  m_TagString: tutorialLock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 8434934686963819811}
   - component: {fileID: 8434934686963819808}
   - component: {fileID: 8434934686963819809}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 8434934687029643658}
   - component: {fileID: 8434934687029643659}
   - component: {fileID: 8434934687029643656}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: keyHoleTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 8434934687304299777}
   - component: {fileID: 8434934687304299790}
   - component: {fileID: 8434934687304299791}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: keyHoleBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ Transform:
   m_GameObject: {fileID: 8434934687621146956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.6755, y: 6, z: 0}
-  m_LocalScale: {x: 4.652, y: 12, z: 0.25}
+  m_LocalScale: {x: 4.652, y: 12, z: 0.2501}
   m_Children: []
   m_Father: {fileID: 8434934686420533296}
   m_RootOrder: 0
