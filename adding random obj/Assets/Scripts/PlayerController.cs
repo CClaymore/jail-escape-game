@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject Key { get; set; }
     // The blue key
     private GameObject BlueKey { get; set; }
+    // The mace item for thwn the player is holding it
+    private GameObject Mace { get; set; }
 
     // Whether the player is currently moving
     public bool Moving { get; private set; } = false;
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour {
         Pointer = transform.Find("Screen").Find("Pointer").GetComponent<Image>();
         Key = Head.transform.Find("Key").gameObject;
         BlueKey = Head.transform.Find("KeyBlue").gameObject;
+        Mace = Head.transform.Find("Mace").gameObject;
 
         // Hide mouse and lock it
         Cursor.visible = false;
@@ -153,7 +156,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
             // Gets the interactable object from the raycasted object
             GameObject interactable = hitObject;
-            while (interactable.tag.Equals("Untagged"))
+            while (interactable.tag.Equals("Untagged") && interactable.transform.parent != null)
                 interactable = interactable.transform.parent.gameObject;
 
             // Gets the type of interactable object
@@ -163,6 +166,7 @@ public class PlayerController : MonoBehaviour {
                 case "tutorialLock": {
                     // Checks if the key is held
                     if (Key.activeSelf) {
+                        // Opens door
                         Destroy(interactable.transform.parent.gameObject);
                         Key.SetActive(false);
                     }
@@ -176,24 +180,44 @@ public class PlayerController : MonoBehaviour {
                     break;
                 }
                 case "drawer": {
+                    // Get drawer controller
                     ChestOfDrawers cod = interactable.GetComponentInParent<ChestOfDrawers>();
                     // Checks if the drawer is locked
-                    if (!interactable.name.EndsWith("Locked"))
+                    if (!cod.IsDrawerLocked(interactable))
+                        // Opens drawer
                         cod.ToggleDrawer(interactable);
                     break;
                 }
                 case "drawerLock": {
+                    // Get drawer controller
                     ChestOfDrawers cod = interactable.GetComponentInParent<ChestOfDrawers>();
                     // Checks if blue key is held
                     if (BlueKey.activeSelf) {
+                        // Unlocks drawer
                         cod.UnlockDrawer(interactable);
                         BlueKey.SetActive(false);
                     }
                     break;
                 }
                 case "pillow": {
+                    // Move pillow
                     Bed bed = interactable.GetComponentInParent<Bed>();
                     bed.MovePillow();
+                    break;
+                }
+                case "mace": {
+                    // Hold mace
+                    Mace.SetActive(true);
+                    Destroy(interactable);
+                    break;
+                }
+                case "barrel": {
+                    // Get barrel controller
+                    Barrels barrels = interactable.GetComponentInParent<Barrels>();
+                    // Checks if player is holding mace
+                    if (Mace.activeSelf) {
+
+                    }
                     break;
                 }
             }

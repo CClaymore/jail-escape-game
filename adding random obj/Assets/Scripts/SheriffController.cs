@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SheriffController : MonoBehaviour {
     // The bounds of sheriff movement

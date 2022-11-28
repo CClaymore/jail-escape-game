@@ -12,6 +12,9 @@ public class ChestOfDrawers : MonoBehaviour {
         drawer.transform.localPosition = pos;
     }
 
+    // Returns true if the drawer is locked
+    public bool IsDrawerLocked(GameObject drawer) => drawer.name.EndsWith("Locked");
+
     // Unlocks the drawer given
     public void UnlockDrawer(GameObject drawerLock) {
         string name = drawerLock.name.Replace("Lock ", "");
