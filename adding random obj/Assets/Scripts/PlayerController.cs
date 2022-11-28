@@ -16,9 +16,7 @@ public class PlayerController : MonoBehaviour {
     private const int MaxVRot = 80;
 
     // Default position and rotation of player on game start
-
-    //private readonly Vector3 DefaultPos = new Vector3(-22, 2.125f, -6);
-    private readonly Vector3 DefaultPos = new Vector3(22, 2.125f, -6);
+    private readonly Vector3 DefaultPos = new Vector3(-22, 2.125f, -6);
     private readonly Vector3 DefaultRot = new Vector3(0, 90, 0);
 
     // Head of the player, used for vertical rotation
@@ -37,7 +35,7 @@ public class PlayerController : MonoBehaviour {
     // Whether the player is currently moving
     public bool Moving { get; private set; } = false;
 
-    // Start is called before the first frame update
+    // Finds all the necessary children and components for the PlayerController to work
     void Start() {
         // Collect necessary GameObjects and Components
         Head = transform.Find("Head").gameObject;
@@ -46,15 +44,21 @@ public class PlayerController : MonoBehaviour {
         Pointer = transform.Find("Screen").Find("Pointer").GetComponent<Image>();
         Key = Head.transform.Find("Key").gameObject;
         BlueKey = Head.transform.Find("KeyBlue").gameObject;
+
+        // Hide mouse and lock it
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+    // Updates the player's position and rotation, and tests for the player interacting with things
     void Update() {
         float delta = Time.deltaTime;
 
         Rotation(delta);
         Movement(delta);
         TestForInteractions();
+
+        TryExit();
     }
 
     // Controls where the player is facing
@@ -201,5 +205,16 @@ public class PlayerController : MonoBehaviour {
         transform.localPosition = DefaultPos;
         transform.eulerAngles = DefaultRot;
         Head.transform.eulerAngles = Vector3.zero;
+    }
+
+    // Sees if the player wants to exit
+    void TryExit() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
     }
 }
