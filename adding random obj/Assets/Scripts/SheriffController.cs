@@ -170,7 +170,7 @@ public class SheriffController : MonoBehaviour {
     bool SendRays(out PlayerController player, params float[] rotations) {
         foreach (float rotation in rotations) {
             Vector3 direction = Head.transform.forward;
-            direction = Quaternion.Euler(0, rotation, 0) * direction; // The direction vector to send the ray
+            direction = Quaternion.Euler(0, rotation + 90, 0) * direction; // The direction vector to send the ray
             LayerMask layers = ~LayerMask.GetMask("Sheriff", "Bars"); // every layer except the sheriff and the bars
             // Send out ray
             if (Physics.Raycast(Head.transform.position, direction, out RaycastHit hit, Mathf.Infinity, layers)) {
